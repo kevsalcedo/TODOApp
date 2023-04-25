@@ -92,8 +92,9 @@ class MainActivity : AppCompatActivity() {
      * This method is used to initialize the UI
      */
     private fun initUI() {
-        categoriesAdapter = CategoriesAdapter(categories)
-        rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        categoriesAdapter = CategoriesAdapter(categories) { position -> updateCategories(position)}
+        rvCategories.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
     }
 }
