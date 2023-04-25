@@ -5,9 +5,11 @@
     <string name="todo_categories">Categories:</string>
     <string name="todo_tasks">Tasks:</string>
 
-    <string name="todo_dialog_add_task">Añade la tarea</string>
-    <string name="todo_dialog_category_business">Negocios</string>
-    <string name="todo_dialog_category_other">Otros</string>
+    <string name="todo_dialog_add_task">Add task name</string>
+    <string name="todo_dialog_category_business">Business</string>
+    <string name="todo_dialog_category_other">Others</string>
     <string name="todo_dialog_category_personal">Personal</string>
-    <string name="todo_dialog_add_task_button">Crear tarea</string>
+    <string name="todo_dialog_add_task_button">Create task</string>
+    <string name="add_task_name">Add task name</string>
+    <string name="toast_add_text_to_task">Please add a name to the task.</string>
 </resources>
