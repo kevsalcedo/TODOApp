@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
 
+    private lateinit var rvTasks: RecyclerView
+    private lateinit var tasksAdapter: TaskAdapter
+
+    private lateinit var fabAddTask: FloatingActionButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
