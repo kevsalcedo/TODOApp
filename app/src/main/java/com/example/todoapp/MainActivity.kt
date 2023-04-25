@@ -79,10 +79,16 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    /**
+     * This method is used to initialize the components
+     */
     private fun initComponent() {
         rvCategories = findViewById(R.id.rvCategories)
     }
 
+    /**
+     * This method is used to initialize the UI
+     */
     private fun initUI() {
         categoriesAdapter = CategoriesAdapter(categories)
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
