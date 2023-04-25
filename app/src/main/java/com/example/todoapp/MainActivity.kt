@@ -36,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initComponent()
         initUI()
+        initListeners()
+    }
+
+    /**
+     * This method is used to open de dialog to add a new task when fab button is pressed.
+     */
+    private fun initListeners() {
+        fabAddTask.setOnClickListener { showDialog() }
+    }
 
     }
 
