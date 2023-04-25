@@ -46,6 +46,37 @@ class MainActivity : AppCompatActivity() {
         fabAddTask.setOnClickListener { showDialog() }
     }
 
+    /**
+     * This method is used to show the Add task dialog
+     */
+    private fun showDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_task)
+
+        val btnAddTask: Button = dialog.findViewById(R.id.btnAddTask)
+        val etTask: EditText = dialog.findViewById(R.id.etTask)
+        val rgCategories: RadioGroup = dialog.findViewById(R.id.rgCategories)
+
+        btnAddTask.setOnClickListener {
+            val currentTask = etTask.text.toString()
+            if (currentTask.isNotEmpty()) {
+                val selectedId = rgCategories.checkedRadioButtonId
+                val selectedRadioButton: RadioButton = dialog.findViewById<RadioButton>(selectedId)
+
+                val currentCategory: TaskCategory = when (selectedRadioButton.text) {
+                    getString(R.string.todo_dialog_category_business) -> Business
+                    getString(R.string.todo_dialog_category_personal) -> Personal
+                    else -> Other
+                }
+
+                tasks.add(Task(currentTask, currentCategory))
+                updateTask()
+                dialog.hide()
+            } else {
+                Toast.makeText(this, getString(R.string.toast_add_text_to_task), Toast.LENGTH_SHORT).show()
+            }
+        }
+        dialog.show()
     }
 
     private fun initComponent() {
