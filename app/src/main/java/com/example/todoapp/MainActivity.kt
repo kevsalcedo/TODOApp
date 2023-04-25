@@ -84,6 +84,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun initComponent() {
         rvCategories = findViewById(R.id.rvCategories)
+        rvTasks = findViewById(R.id.rvTasks)
+        fabAddTask = findViewById(R.id.fabAddTask)
     }
 
     /**
