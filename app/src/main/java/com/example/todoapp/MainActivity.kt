@@ -1,16 +1,26 @@
 package com.example.todoapp
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todoapp.TaskCategory.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
     private val categories = listOf<TaskCategory>(
-        TaskCategory.Business,
-        TaskCategory.Personal,
-        TaskCategory.Other
+        Business,
+        Personal,
+        Other
+    )
+
+    private val tasks = mutableListOf(
+        Task("pruebaBusiness", Business),
+        Task("pruebaPersonal", Personal),
+        Task("pruebaOther", Other)
     )
 
     private lateinit var rvCategories: RecyclerView
