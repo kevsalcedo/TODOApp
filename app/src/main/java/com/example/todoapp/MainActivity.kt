@@ -96,5 +96,30 @@ class MainActivity : AppCompatActivity() {
         rvCategories.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvCategories.adapter = categoriesAdapter
+
+        tasksAdapter = TaskAdapter(tasks) { position -> onItemSelected(position)}
+        rvTasks.layoutManager = LinearLayoutManager(this)
+        rvTasks.adapter = tasksAdapter
+    }
+
+    private fun updateCategories(position: Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTask()
+    }
+
+    /**
+     * This method is used to update the task list
+     */
+    private fun updateTask() {
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTask = tasks.filter { selectedCategories.contains(it.category) }
+        tasksAdapter.tasks = newTask
+        tasksAdapter.notifyDataSetChanged()
+    }
+
+    private fun onItemSelected(position: Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTask()
     }
 }
