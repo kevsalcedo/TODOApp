@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         initComponent()
         initUI()
         initListeners()
+        supportActionBar?.hide()
     }
 
     /**
